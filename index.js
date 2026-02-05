@@ -11,6 +11,9 @@ app.use(express.static(path.join(__dirname,"/public")));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+// const multer=require("multer");
+// const upload=multer({dest:"uploads/"})
+
 const listings = [
   {
     title: "Cozy Beachfront Cottage",
@@ -283,6 +286,9 @@ app.get("/new",(req,res)=>{
   res.render("new.ejs");
 })
 
-// app.post("/",(req,res)=>{
-//   let {}
-// })
+app.post("/",(req,res)=>{
+  let {title,price,location,description}=req.body;
+  // const image=req.file;
+  listings.push({title,price,location,description})
+  res.redirect("/")
+})
