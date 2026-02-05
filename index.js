@@ -278,3 +278,11 @@ const listings = [
 app.get("/",(req,res)=>{
     res.render("index.ejs",{listings});
 })
+
+app.get("/new",(req,res)=>{
+  res.render("new.ejs");
+})
+
+// app.post("/",(req,res)=>{
+//   let {}
+// })
