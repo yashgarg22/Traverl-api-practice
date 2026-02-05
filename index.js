@@ -287,8 +287,8 @@ app.get("/new",(req,res)=>{
 })
 
 app.post("/",(req,res)=>{
-  let {title,price,location,description}=req.body;
-  // const image=req.file;
-  listings.push({title,price,location,description})
+  let {title,image,price,location,description}=req.body;
+  
+  listings.push({title,image,price,location,description})
   res.redirect("/")
 })
